@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Demo 1: Common Methods</title>
+<style type="text/css">
+h1 {
+    font-size: 3vw;
+    text-align: center;
+}
+h2 {
+    font-size: 1.6vw;
+}
+button {
+    width: 15vw;
+    height: 4vw;
+    margin: 0.5vw;
+    font-size: 1vw;
+}
+h2, p.buttons {
+    text-align: center;
+}
+a, a:visited {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+main {
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+p.description {
+    margin: 2vw;
+    padding: 1vw;
+    font-size: 1vw;
+    border: 1px dotted #555;
+}
+footer {
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 3vw;
+}
+</style>
+<script>
+function sayHi(name) {
+    alert("Hello, " + name + "!");
+}
+function sayHi2() {
+    var name = prompt("What's your name?");
+    sayHi(name);
+}
+function sayHi3() {
+    var confirmation = false;
+    var name;
+    var message;
+
+    while (!confirmation) {
+        name = prompt("What's your name?");
+        message = "Is your name, " + name + "?";
+        confirmation = confirm(message);
+    }
+    sayHi(name);
+}
+</script>
+</head>
+<body>
+<h1>JavaScript Demo 1: Common Methods</h1>
+<main>
+<h2>
+This demo shows the use of the <code>alert()</code>, <code>prompt()</code>,
+and <code>confirm()</code> JavaScript methods.
+</h2>
+<p class="buttons">
+<button onClick="sayHi('Chesire Cat');">Start with Alert Button</button>
+<button onClick="sayHi2();">Add a Prompt Button</button>
+<button onClick="sayHi3();">Add a Confirm Button</button>
+</p>
+<p class="description">
+<b>Note:</b> Each button calls a user defined function that in turn calls a
+built-in JavaScript method.  The last one has a while loop that repeats until
+the user clicks <q>OK</q> in the confirm dialog.
+</p>
+</main>
+
+<footer>
+<hr>
+<a href="http://validator.w3.org/check/referer">
+<strong> HTML </strong> Valid! </a> |
+<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+<strong> CSS </strong> Valid! </a> |
+<a href="../index.html">Back to the Zoo</a>
+</footer>
+
+</body>
+</html>
