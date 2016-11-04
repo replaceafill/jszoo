@@ -3,4 +3,4 @@
 A collection of simple, clearly written example web pages designed to help
 learn beginning JavaScript programming.
 
-* Demo 1: [Common Methods](demo1/index.html)
+* Demo 1: [Common Methods](http://htmlpreview.github.io/?https://github.com/novawebdevelopment/jszoo/blob/master/demo01/index.html)
