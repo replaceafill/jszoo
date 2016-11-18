@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Demo 3: Canvas Drawing I</title>
+<style type="text/css">
+h1 {
+    font-size: 3vw;
+    text-align: center;
+}
+a, a:visited {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+canvas {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px dotted #000;
+}
+footer {
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 3vw;
+}
+</style>
+<script>
+function draw() {
+    var canvas = document.getElementById('artwork');
+
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    }
+
+    ctx.fillStyle = "orange";
+    ctx.fillRect(100, 100, 200, 200);
+    ctx.fillStyle = "black";
+    ctx.lineWidth = 5;
+    ctx.strokeRect(100, 100, 200, 200);
+    ctx.stroke();
+    ctx.fillStyle = "red";
+    ctx.arc(500, 500 , 150, 0, Math.PI*2, true);
+    ctx.fill();
+    ctx.fillStyle = "black";
+    ctx.arc(500, 500 , 150, 0, Math.PI*2, true);
+    ctx.stroke();
+}
+</script>
+</head>
+<body onload="draw()">
+<h1>JavaScript Demo 3: Canvas Drawing I</h1>
+<canvas id="artwork" width="800" height="800"></canvas>
+
+<footer>
+<hr>
+<a href="http://validator.w3.org/check/referer">
+<strong> HTML </strong> Valid! </a> |
+<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+<strong> CSS </strong> Valid! </a> |
+<a href="../index.html">Back to the Zoo</a>
+</footer>
+
+</body>
+</html>
