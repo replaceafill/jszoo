@@ -26,6 +26,13 @@ footer {
 }
 </style>
 <script>
+function randomColor() {
+    rgbaString = "rgba("
+    rgbaString += (Math.floor(Math.random() * 255).toString()) + ", ";
+    rgbaString += (Math.floor(Math.random() * 255).toString()) + ", ";
+    rgbaString += (Math.floor(Math.random() * 255).toString()) + ", 0.6)";
+    return rgbaString;
+}
 function draw() {
     var canvas = document.getElementById('artwork');
 
@@ -33,18 +40,55 @@ function draw() {
         var ctx = canvas.getContext('2d');
     }
 
+    /* Draw an orange square with black border */
     ctx.fillStyle = "orange";
-    ctx.fillRect(100, 100, 200, 200);
-    ctx.fillStyle = "black";
+    ctx.fillRect(50, 25, 300, 300);
     ctx.lineWidth = 5;
-    ctx.strokeRect(100, 100, 200, 200);
+    ctx.strokeRect(50, 25, 300, 300);
     ctx.stroke();
+
+    /* Draw a red circle with black border */
     ctx.fillStyle = "red";
-    ctx.arc(500, 500 , 150, 0, Math.PI*2, true);
+    ctx.arc(580, 200 , 180, 0, Math.PI*2, true);
     ctx.fill();
-    ctx.fillStyle = "black";
-    ctx.arc(500, 500 , 150, 0, Math.PI*2, true);
     ctx.stroke();
+
+    /* Draw a translucent green rectangle */
+    ctx.fillStyle = "rgba(0, 150, 0, 0.5)";
+    ctx.fillRect(400, 200, 360, 200);
+
+    /* Draw a regular hexagon */
+    ctx.beginPath();
+    ctx.moveTo(450, 680);
+    ctx.lineTo(450, 520);
+    ctx.lineTo(589, 440);
+    ctx.lineTo(728, 520);
+    ctx.lineTo(728, 680);
+    ctx.lineTo(589, 760);
+    ctx.lineTo(450, 680);
+    ctx.fillStyle = "rgba(255, 255, 0, 0.6)";
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+
+    /* Draw a bunch of smiley faces with random colors
+       (from MDN Drawing shapes with canvas) */
+    ctx.lineWidth = 3;
+    for (var y = 395; y <= 740; y += 115) {
+        for (var x = 75; x <= 315; x += 120) {
+            ctx.beginPath();
+            ctx.arc(x, y, 50, 0, Math.PI*2, true); // Outer circle
+            ctx.fillStyle = randomColor();
+            ctx.fill();
+            ctx.moveTo(x + 35, y);
+            ctx.arc(x, y, 35, 0, Math.PI, false);  // Mouth (clockwise)
+            ctx.moveTo(x - 10, y - 10);
+            ctx.arc(x - 10, y - 10, 5, 0, Math.PI*2, true);  // Left eye
+            ctx.moveTo(x + 20, y - 10);
+            ctx.arc(x + 15, y - 10, 5, 0, Math.PI*2, true);  // Right eye
+            ctx.stroke();
+        };
+    };
 }
 </script>
 </head>
