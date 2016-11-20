@@ -59,8 +59,11 @@ function drag(ev)
 }
 function drop(ev)
 {
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    var image_id = ev.dataTransfer.getData("text");
+    var image_box_id = 'box_' + image_id;
+    if (ev.target.id == image_box_id) {
+        ev.target.appendChild(document.getElementById(image_id));
+    }
     ev.preventDefault();
 }
 </script>
@@ -70,21 +73,21 @@ function drop(ev)
 <main>
 <h2>Drag the picture to the appropriate box:</h2>
 <ul id="nameboxes">
-    <li><div id="box1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <li><div id="box_gh" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div><p>Grace Hopper</p></li>
-    <li><div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <li><div id="box_gvr" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div><p>Guido van Rossum</p></li>
-    <li><div id="box3" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <li><div id="box_jm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div><p>Jessica McKellar</p></li>
-    <li><div id="box4" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <li><div id="box_gnu" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div><p>GNU</p></li>
-    <li><div id="box5" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <li><div id="box_al" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div><p>Ada Lovelace</p></li>
-    <li><div id="box6" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <li><div id="box_rms" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div><p>Richard Stallman</p></li>
-    <li><div id="box7" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <li><div id="box_tux" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div><p>Tux</p></li>
-    <li><div id="box8" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <li><div id="box_lt" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div><p>Linus Torvalds</p></li>
 </ul>
 <ul id="pictures">
