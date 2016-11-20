@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Demo 5: Drag and Drop API</title>
+<style>
+h1 {
+    font-size: 3vw;
+    text-align: center;
+}
+h2 {
+    font-size: 2.4vw;
+    text-align: left;
+    color: #999;
+    margin-left: 5vw;
+}
+a, a:visited { 
+    color: #000; 
+    font-weight: bold; 
+    text-decoration: none; 
+}
+img {
+    width: 7.2vw;
+}
+main {
+    text-align: center;
+}
+ul#nameboxes > li, ul#pictures > li {
+    display: inline-block;
+    list-style-type: none;
+    width: 11vw;
+}
+ul#nameboxes > li > div {
+    width: 8vw;
+    height: 10vw;
+    padding: 1vw;
+    border: 1px solid #AAA;
+}
+ul#nameboxes > li > p {
+    font-size: 0.8vw;
+    font-weight: bold;
+    margin-top: 0.3vw;
+    margin-bottom: 0.4vw;
+}
+footer {
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 3vw;
+}
+</style>
+<script>
+function allowDrop(ev)
+{
+    ev.preventDefault();
+}
+function drag(ev)
+{
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev)
+{
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+    ev.preventDefault();
+}
+</script>
+</head>
+<body>
+<h1>JavaScript Demo 5: Drag and Drop API</h1>
+<main>
+<h2>Drag the picture to the appropriate box:</h2>
+<ul id="nameboxes">
+    <li><div id="box1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div><p>Grace Hopper</p></li>
+    <li><div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div><p>Guido van Rossum</p></li>
+    <li><div id="box3" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div><p>Jessica McKellar</p></li>
+    <li><div id="box4" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div><p>GNU</p></li>
+    <li><div id="box5" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div><p>Ada Lovelace</p></li>
+    <li><div id="box6" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div><p>Richard Stallman</p></li>
+    <li><div id="box7" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div><p>Tux</p></li>
+    <li><div id="box8" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div><p>Linus Torvalds</p></li>
+</ul>
+</ul>
+<ul id="pictures">
+    <li><img id="al" src="images/who1.jpg" alt="" draggable="true"
+        ondragstart="drag(event)"></li>
+    <li><img id="rms" src="images/who2.jpg" alt="" draggable="true"
+        ondragstart="drag(event)"></li>
+    <li><img id="gh" src="images/who3.jpg" alt="" draggable="true"
+        ondragstart="drag(event)"></li>
+    <li><img id="gvr" src="images/who4.jpg" alt="" draggable="true"
+        ondragstart="drag(event)"></li>
+    <li><img id="tux" src="images/who5.jpg" alt="" draggable="true"
+        ondragstart="drag(event)"></li>
+    <li><img id="jm" src="images/who6.jpg" alt="" draggable="true"
+        ondragstart="drag(event)"></li>
+    <li><img id="lt" src="images/who7.jpg" alt="" draggable="true"
+        ondragstart="drag(event)"></li>
+    <li><img id="gnu" src="images/who8.jpg" alt="" draggable="true"
+        ondragstart="drag(event)"></li>
+</ul>
+</main>
+
+<footer>
+<hr>
+<a href="http://validator.w3.org/check/referer">
+<strong> HTML </strong> Valid! </a> |
+<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+<strong> CSS </strong> Valid! </a> |
+<a href="../index.html">Back to the Zoo</a>
+</footer>
+
+</body>
+</html>
