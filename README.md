@@ -8,3 +8,4 @@ like canvas drawing and geolocation.
 * Demo 2: [99 Bottles of Pop](http://htmlpreview.github.io/?https://github.com/novawebdevelopment/jszoo/blob/master/demo02/index.html)
 * Demo 3: [Canvas Drawing I](http://htmlpreview.github.io/?https://github.com/novawebdevelopment/jszoo/blob/master/demo03/index.html)
 * Demo 4: [Geolocation I](http://htmlpreview.github.io/?https://github.com/novawebdevelopment/jszoo/blob/master/demo04/index.html)
+* Demo 5: [Drag and Drop API](http://htmlpreview.github.io/?https://github.com/novawebdevelopment/jszoo/blob/master/demo05/index.html)
